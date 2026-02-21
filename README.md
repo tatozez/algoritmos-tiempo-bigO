@@ -32,7 +32,13 @@ Se mide el tiempo de ejecución utilizando `System.nanoTime()` y se promedian 5 
 | Búsqueda lineal | O(n) | O(n) |
 | Burbuja | O(n²) | O(n²) |
 
+## Cómo ejecutar
+En macOS / Linux:
+```bash
+javac src/Main.java
+java -cp src Main
 ## Video demostración
+
 
 
 ## Autor
