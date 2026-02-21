@@ -32,18 +32,20 @@ Se mide el tiempo de ejecución utilizando `System.nanoTime()` y se promedian 5 
 | Búsqueda lineal | O(n) | O(n) |
 | Burbuja | O(n²) | O(n²) |
 
+## Conclusiones
+Los resultados obtenidos confirman el comportamiento teórico de cada algoritmo según su complejidad temporal. 
+Se observa un crecimiento lineal en búsqueda lineal y factorial iterativo, crecimiento exponencial en Fibonacci recursivo sin memoización, y crecimiento cuadrático en el algoritmo de ordenamiento burbuja.
+
+Las gráficas permiten visualizar claramente la diferencia entre implementaciones iterativas y recursivas, validando el análisis Big-O realizado.
+
+
 ## Cómo ejecutar
 En macOS / Linux:
 ```bash
 javac src/Main.java
 java -cp src Main
 ## Video demostración
-## Conclusiones
 
-Los resultados obtenidos confirman el comportamiento teórico de cada algoritmo según su complejidad temporal. 
-Se observa un crecimiento lineal en búsqueda lineal y factorial iterativo, crecimiento exponencial en Fibonacci recursivo sin memoización, y crecimiento cuadrático en el algoritmo de ordenamiento burbuja.
-
-Las gráficas permiten visualizar claramente la diferencia entre implementaciones iterativas y recursivas, validando el análisis Big-O realizado.
 
 
 ## Autor
