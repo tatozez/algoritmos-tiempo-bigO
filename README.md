@@ -42,13 +42,12 @@ Las gráficas permiten visualizar claramente la diferencia entre implementacione
 ## Cómo ejecutar
 En macOS / Linux:
 ```bash
+```
 javac src/Main.java
 java -cp src Main
-## Video demostración
-## 🎥 Video demostración
 
 https://www.youtube.com/watch?v=WJ9pt9FQqQ0
-
+```
 
 
 ## Autor
