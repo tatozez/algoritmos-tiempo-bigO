@@ -123,32 +123,39 @@ public class Main {
     }
 
     static void medirBusquedaLineal() throws IOException {
-
         try (FileWriter fw = new FileWriter("data/busqueda_lineal.csv")) {
-
             fw.write("n,iter_ns,rec_ns\n");
 
-            Random rnd = new Random(SEED);
-
+            // n grande porque es O(n) y aguanta bien
             for (int n = 1000; n <= 20000; n += 1000) {
 
-                final int size = n;
+                // IMPORTANTE: inicialización FUERA de la medición
+                Random rnd = new Random(SEED); // reinicio por tamaño (más estable)
+                int[] arr = generarArrayPositivo(n, rnd);
 
-                int[] arr = generarArray(size, rnd);
-                int objetivo = arr[size - 1]; // peor caso
+                // Peor caso REAL: objetivo NO existe y como el array es positivo, -1 nunca aparece
+                int objetivo = -1;
 
+                // warmup
                 for (int i = 0; i < WARMUP; i++) {
                     busquedaIter(arr, objetivo);
                     busquedaRec(arr, objetivo, 0);
                 }
 
                 long iterAvg = promedioNano(() -> busquedaIter(arr, objetivo));
-                long recAvg = promedioNano(() -> busquedaRec(arr, objetivo, 0));
+                long recAvg  = promedioNano(() -> busquedaRec(arr, objetivo, 0));
 
-                fw.write(size + "," + iterAvg + "," + recAvg + "\n");
+                fw.write(n + "," + iterAvg + "," + recAvg + "\n");
             }
         }
     }
+    static int[] generarArrayPositivo(int n, Random rnd) {
+    int[] arr = new int[n];
+    for (int i = 0; i < n; i++) {
+        arr[i] = 1 + rnd.nextInt(1_000_000); // solo números positivos
+    }
+    return arr;
+}
 
     // ============================================================
     // BURBUJA
