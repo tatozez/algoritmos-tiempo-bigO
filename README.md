@@ -33,7 +33,7 @@ Se mide el tiempo de ejecución utilizando `System.nanoTime()` y se promedian 5 
 | Burbuja | O(n²) | O(n²) |
 
 ## Video demostración
-(Agregar aquí el enlace de YouTube)
+
 
 ## Autor
 Roberto Estuardo Chavarría Zelada
